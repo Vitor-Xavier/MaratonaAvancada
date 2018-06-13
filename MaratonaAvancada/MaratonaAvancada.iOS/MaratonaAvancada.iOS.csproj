@@ -92,6 +92,8 @@
     <Compile Include="EntryFocusEffect.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\CheckboxRenderer.cs" />
+    <Compile Include="Renderers\CircleImageRenderer.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,6 +150,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="SaturdayMP.XPlugins.iOS.BEMCheckBox">
+      <Version>1.4.3</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.530893" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

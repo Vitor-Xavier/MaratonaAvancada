@@ -11,8 +11,9 @@ namespace MaratonaAvancada
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
-		}
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new ControlsPage());
+        }
 
 		protected override void OnStart ()
 		{

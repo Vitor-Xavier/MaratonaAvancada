@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MaratonaAvancada.Controls"
+             x:Class="MaratonaAvancada.ControlsPage"
+             Title="Pessoas">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Persons}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <controls:ItemListView Title="{Binding Name}" 
+                                                   Description="{Binding Bio}" 
+                                                   AvatarSource="{Binding Avatar}"
+                                                   MaxLength="200" 
+                                                   Margin="12"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" Margin="8">
+                <controls:Checkbox IsChecked="True"/>
+                <Label Text="Texto" VerticalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
