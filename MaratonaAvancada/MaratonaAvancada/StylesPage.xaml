@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MaratonaAvancada.StylesPage"
+             Title="Modulo 4">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="View" x:Key="baseStyle">
+                <Setter Property="Margin" Value="6"/>
+                <Setter Property="BackgroundColor" Value="GhostWhite"/>
+            </Style>
+            <Style TargetType="Label" BasedOn="{StaticResource baseStyle}">
+                <Setter Property="TextColor" Value="Navy"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style TargetType="Entry" x:Key="registro" BasedOn="{StaticResource baseStyle}">
+                <Setter Property="PlaceholderColor" Value="Navy"/>
+            </Style>
+            <Style TargetType="Label" x:Key="warningLabel" BasedOn="{StaticResource baseStyle}">
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Registro" Style="{DynamicResource TitleStyle}"/>
+            <StackLayout>
+                <Label Text="Nome"/>
+                <Entry Placeholder="Texto" Style="{StaticResource registro}"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Email" Style="{DynamicResource requiredField}"/>
+                <Entry Placeholder="Texto" Text="{Binding Email}" Style="{StaticResource registro}"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Senha"/>
+                <Entry Placeholder="Texto" Style="{StaticResource registro}" IsPassword="True"/>
+            </StackLayout>
+            <Button HorizontalOptions="Center" Text="Enviar" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
