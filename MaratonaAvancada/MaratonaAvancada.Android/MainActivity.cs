@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace MaratonaAvancada.Droid
 {
@@ -21,6 +22,16 @@ namespace MaratonaAvancada.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
+
+            MessagingCenter.Subscribe<Models.Message>(this, "SendMessage", message =>
+            {
+                SendToast(message.Text);
+            });
+        }
+
+        private void SendToast(string text)
+        {
+            Toast.MakeText(this, text, ToastLength.Short).Show();
         }
     }
 }
