@@ -39,7 +39,7 @@ namespace MaratonaAvancada
 			InitializeComponent ();
             Messages = new ObservableCollection<Message>();
             BindingContext = this;
-
+            ItemText = "Vazio";
             MessagingCenter.Subscribe<Message>(this, "SendMessage", message =>
             {
                 switch (Messages.Count)
